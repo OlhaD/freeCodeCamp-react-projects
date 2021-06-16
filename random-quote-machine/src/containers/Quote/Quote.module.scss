@@ -1,0 +1,50 @@
+$backgroundColor: white;
+
+.QuoteWrapper {
+    background-color: $backgroundColor;
+    text-align: center;
+    min-width: 40vw;
+    max-width: 50vw;
+    min-height: 20vh;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .Quote {
+        margin-bottom: 1rem;
+
+        .Text {
+            text-align: center;
+            font-weight: 500;
+            font-size: 1.5em;
+            margin-bottom: 1rem;
+        }
+
+        .Author {
+            text-align: right;
+        }
+    }
+
+    .Footer {
+        display: flex;
+        justify-content: space-around;
+
+        .Social {
+
+        }
+
+        .NewQuote {
+
+        }
+    }
+}
+
+@media(max-width: 500px){
+    .QuoteWrapper{
+        width: 95%;
+        max-width: 95%;
+        padding: auto 1rem;
+    }
+}

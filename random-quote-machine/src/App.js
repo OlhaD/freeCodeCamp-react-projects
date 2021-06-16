@@ -5,9 +5,10 @@ import QuoteList from './containers/QuoteList/QuoteList';
 
 function App() {
   return (
-    <Layout>
-      <QuoteList />
-    </Layout>
+    // <Layout>
+    //   <QuoteList />
+    // </Layout>
+    <QuoteList />
   );
 }
 
