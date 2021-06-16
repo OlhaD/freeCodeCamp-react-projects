@@ -1,5 +1,5 @@
-
 node_modules/
+random-quote-machine/node_modules/.bin/
 
 package-lock.json
 
