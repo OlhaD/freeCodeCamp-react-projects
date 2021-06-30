@@ -1,0 +1,53 @@
+$header-color: rgb(74,163,163);
+$primary-color: rgb(192,216,216);
+$shadow-color: #000000;
+
+.TextEditor {
+    .Header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: $header-color;
+        -moz-box-shadow: inset 0 -10px 10px -10px #000000;
+        -webkit-box-shadow: inset 0 -10px 10px -10px #000000;
+        box-shadow: inset 0 -5px 5px -5px #000000;
+
+        div {
+            margin: 0.5rem 1rem;
+
+            span {
+                margin-left: 1rem;
+                font-size: 1.25em;
+                font-weight: 500;
+            }
+        }
+
+        svg {
+            margin-right: 1rem;
+        }
+    }
+
+    .Body {
+        background-color: $primary-color;
+        min-height: 20vh;
+        min-width: 100%;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        * {
+            max-width: 95%;
+        }
+    }
+
+    .ExpandedView{
+        height: 90vh;
+    }
+
+    .Hidden {
+        visibility: hidden;
+    }
+}
