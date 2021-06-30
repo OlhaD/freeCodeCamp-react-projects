@@ -4,3 +4,5 @@ markdown-previewer/node_modules/.bin/
 markdown-previewer/package-lock.json
 
 random-quote-machine/package-lock.json
+
+markdown-previewer/yarn.lock

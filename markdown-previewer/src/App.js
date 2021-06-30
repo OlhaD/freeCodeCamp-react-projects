@@ -16,7 +16,9 @@ class App extends Component {
     const html = marked(this.defaultText);
     this.state = {
       html: html,
-      defaultText: this.defaultText
+      defaultText: this.defaultText,
+      hideEditor: false,
+      hidePreviewer: false
     }
   }
 
@@ -29,19 +31,28 @@ class App extends Component {
     });
   }
 
+  onSizeChangedHandler = (shouldExpand, isEditor) => {
+    this.setState({
+      hideEditor: shouldExpand ? !this.state.hideEditor && !isEditor : false,
+      hidePreviewer: shouldExpand ? !this.state.hideEditor && isEditor : false,
+    });
+  }
+
   render() {
     return (
       <div className={classes.App}>
         <header className="App-header">
         </header>
-  
+        
         <main>
           <div className={classes.Container}>
             <div className={classes.TextEditor}>
-              <TextEditor header="Editor" isEditor={true} onTextAreaChanged={(event) => this.textAreaChangeHandler(event)} value={this.state.defaultText}></TextEditor>
+              <TextEditor header="Editor" isEditor={true} onTextAreaChanged={(event) => this.textAreaChangeHandler(event)} hide={this.state.hideEditor}
+                onSizeChanged={(data) => this.onSizeChangedHandler(data, true)} value={this.state.defaultText}></TextEditor>
             </div>
             <div className={classes.TextPreviewer}>
-              <TextEditor header="Previewer" isEditor={false} value={this.state.html}></TextEditor>
+              <TextEditor header="Previewer" isEditor={false} hide={this.state.hidePreviewer}
+                onSizeChanged={(data) => this.onSizeChangedHandler(data, false)} value={this.state.html}></TextEditor>
             </div>
           </div>
         </main>

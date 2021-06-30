@@ -22,6 +22,10 @@ $shadow-color: #000000;
                 font-weight: 500;
             }
         }
+
+        svg {
+            margin-right: 1rem;
+        }
     }
 
     .Body {
@@ -37,5 +41,13 @@ $shadow-color: #000000;
         * {
             max-width: 95%;
         }
+    }
+
+    .ExpandedView{
+        height: 90vh;
+    }
+
+    .Hidden {
+        visibility: hidden;
     }
 }
