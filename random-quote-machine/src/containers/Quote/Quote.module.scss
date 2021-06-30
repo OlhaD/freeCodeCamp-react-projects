@@ -1,0 +1,79 @@
+$backgroundColor: white;
+
+.QuoteWrapper {
+    background-color: $backgroundColor;
+    text-align: center;
+    min-width: 20vw;
+    max-width: 30vw;
+    min-height: 20vh;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .Quote {
+        margin-bottom: 1rem;
+
+        .Text {
+            text-align: center;
+            font-weight: 500;
+            font-size: 1.5em;
+            margin-bottom: 1rem;
+
+            span {
+                margin-left: 1rem;
+            }
+        }
+
+        .Author {
+            text-align: right;
+        }
+    }
+
+    .Footer {
+        display: flex;
+        justify-content: space-between;
+
+        .Social {
+            display: flex;
+
+            .TwitterBox, .TumblrBox {
+                margin: 0.5rem;
+                
+                svg {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        .NewQuote {
+            display: flex;
+            align-items: center;
+
+            button {
+                color: $backgroundColor;
+                border: none;
+                height: 2.5rem;
+                padding: 0 0.7rem;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media(max-width: 500px){
+    .QuoteWrapper{
+        width: 95%;
+        max-width: 95%;
+        padding: auto 1rem;
+    }
+}
+@media(min-width: 501px) and (max-width: 1400px){
+    .QuoteWrapper{
+        width: 70%;
+        max-width: 80%;
+        padding: auto 1rem;
+    }
+}
