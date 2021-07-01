@@ -1,0 +1,16 @@
+@import "../../share/styles/global.module.scss";
+
+$background-color: rgb(179,179,179);
+$border-color: rgb(241,196,15);
+
+.Display {
+    @include flex-center(left, center);
+    width: 60vw;
+    background-color: $background-color;
+    border: 5px solid $border-color;
+
+    .NumbersPad {
+        width: 50%;
+        padding: 1rem;
+    }
+  }

@@ -1,3 +1,5 @@
+@import "./share/styles/global.module.scss";
+
 $primary-color: rgb(141,141,141);
 
 * {
@@ -13,9 +15,9 @@ $primary-color: rgb(141,141,141);
   height: 100%;
 
   .Container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-center(center, center);
+    height: 100vh;    
+
+    
   }
 }

@@ -1,5 +1,6 @@
 import * as classes from './App.module.scss';
 import React, { Component } from 'react';
+import DrumPad from './components/DrumPad/DrumPad';
 
 class App extends Component {
   constructor(props){
@@ -13,8 +14,8 @@ class App extends Component {
         </header>
         
         <main>
-          <div className={classes.Container}>
-            App
+          <div className={classes.Container}>            
+            <DrumPad />
           </div>
         </main>
       </div>
