@@ -1,0 +1,21 @@
+$primary-color: rgb(141,141,141);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  background-color: $primary-color;
+  min-height: 100vh;
+  height: 100%;
+
+  .Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
