@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {connect} from 'react-redux'
 import * as classes from './DrumPad.module.scss';
 import {setActiveButton} from '../../store/actions/drumPad';
 import NumPad from '../NumPad/NumPad';
+import Power from '../Power/Power';
 
 function DrumPad(props) {
     const buttonsInfo = [
@@ -52,9 +53,19 @@ function DrumPad(props) {
         audioSrc: "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
     }];
 
+    var [isPowerOn, setIsPowerOn] = useState(true);
+
+    function onPowerChanged(isOn){
+        setIsPowerOn(isOn);
+    }
+
     return (
         <div className={classes.Display} >
-            <NumPad buttons={buttonsInfo} pressedKey={props.pressedKey} />
+            <NumPad buttons={buttonsInfo} isPowerOn={isPowerOn} pressedKey={props.pressedKey} />
+
+            <div className={classes.RightPanel}>
+                <Power onChanged={(isOn) => onPowerChanged(isOn)} />
+            </div>
         </div>
     );
 }

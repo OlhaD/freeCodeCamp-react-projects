@@ -1,0 +1,21 @@
+@import "../../../share/styles/global.module.scss";
+
+$backgroundColor: black;
+$color: white;
+$backgroundColorActive: rgb(0,0,255);
+
+.Toggler{
+    background-color: $backgroundColor;
+    color: $color;
+    border: 3px solid $backgroundColor;
+    @include flex-center(center, center);
+
+    .Half {
+        width: 1.75rem;
+        height: 1rem;
+    }
+
+    .Active {
+        background-color: $backgroundColorActive;
+    }
+}

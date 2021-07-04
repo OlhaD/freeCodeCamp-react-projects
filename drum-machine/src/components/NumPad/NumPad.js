@@ -6,9 +6,10 @@ function NumPad(props) {
     return (
         <div className={classes.NumbersPad}>
             {
-                props.buttons.map((button, key) => (
-                    <Button key={key} keyPressed={props.pressedKey} name={button.text} audioSrc={button.audioSrc} />)
-                )
+                props.buttons.map((button, key) =>
+                (
+                    <Button key={key} keyPressed={props.pressedKey} name={button.text} audioSrc={button.audioSrc} disabled={!props.isPowerOn}/>
+                ))
             }
         </div>
     );

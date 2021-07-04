@@ -15,7 +15,7 @@ function Button(props) {
 
     return (
         <span>
-            <button className={classes.Button} onClick={start} >
+            <button className={classes.Button} onClick={start} disabled={props.disabled}>
                 {props.name}
             </button>
         </span>
