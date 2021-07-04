@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import * as classes from './DrumPad.module.scss';
-import Button from '../UI/Button/Button';
 import {setActiveButton} from '../../store/actions/drumPad';
+import NumPad from '../NumPad/NumPad';
 
 function DrumPad(props) {
     const buttonsInfo = [
@@ -53,20 +53,15 @@ function DrumPad(props) {
     }];
 
     return (
-        <div className={classes.Display}>
-            <div className={classes.NumbersPad}>
-                {
-                    buttonsInfo.map((button, key) => (
-                        <Button key={key} name={button.text} audioSrc={button.audioSrc} />)
-                    )
-                }
-            </div>
+        <div className={classes.Display} >
+            <NumPad buttons={buttonsInfo} pressedKey={props.pressedKey} />
         </div>
     );
 }
 
 function mapStateToProps(state) {
     return {
+        pressedKey: state.default.pressedKey
     }
   }
   
