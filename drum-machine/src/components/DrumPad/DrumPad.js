@@ -4,6 +4,7 @@ import * as classes from './DrumPad.module.scss';
 import {setActiveButton} from '../../store/actions/drumPad';
 import NumPad from '../NumPad/NumPad';
 import Power from '../Power/Power';
+import MessageBox from '../UI/MessageBox/MessageBox';
 
 function DrumPad(props) {
     const buttonsInfo = [
@@ -54,17 +55,31 @@ function DrumPad(props) {
     }];
 
     var [isPowerOn, setIsPowerOn] = useState(true);
+    var [message, setMessage] = useState("");
 
     function onPowerChanged(isOn){
         setIsPowerOn(isOn);
+        if(!isOn){
+            onButtonActivated("")
+        }
+    }
+
+    function onButtonActivated(activeButton){
+        setMessage(activeButton.message);
     }
 
     return (
         <div className={classes.Display} >
-            <NumPad buttons={buttonsInfo} isPowerOn={isPowerOn} pressedKey={props.pressedKey} />
+            <NumPad buttons={buttonsInfo} isPowerOn={isPowerOn} pressedKey={props.pressedKey} onButtonActivated={(button) => onButtonActivated(button)} />
 
             <div className={classes.RightPanel}>
-                <Power onChanged={(isOn) => onPowerChanged(isOn)} />
+                <div>
+                    <Power onChanged={(isOn) => onPowerChanged(isOn)} />
+                </div>
+
+                <div>
+                    <MessageBox text={message} />
+                </div>
             </div>
         </div>
     );

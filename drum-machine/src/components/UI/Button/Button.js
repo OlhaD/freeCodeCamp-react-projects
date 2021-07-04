@@ -6,11 +6,21 @@ function Button(props) {
 
     const start = () => {
         audio.play();
+        buttonActivatedHandler();
     };
 
     const keyPressed = props.keyPressed.toLowerCase();
-    if(props.name.toLowerCase() === keyPressed) {
+    if(props.name.toLowerCase() === keyPressed && !props.disabled) {
         audio.play();
+        buttonActivatedHandler();
+    }
+
+    function buttonActivatedHandler(){
+        props.onButtonActivated({
+            text: props.name,
+            message: props.message,
+            audioSrc: props.audioSrc
+        })
     }
 
     return (

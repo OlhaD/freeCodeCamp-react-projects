@@ -8,7 +8,8 @@ function NumPad(props) {
             {
                 props.buttons.map((button, key) =>
                 (
-                    <Button key={key} keyPressed={props.pressedKey} name={button.text} audioSrc={button.audioSrc} disabled={!props.isPowerOn}/>
+                    <Button key={key} keyPressed={props.pressedKey} name={button.text} audioSrc={button.audioSrc} message={button.message}
+                        onButtonActivated={(button) => props.onButtonActivated(button)} disabled={!props.isPowerOn}/>
                 ))
             }
         </div>

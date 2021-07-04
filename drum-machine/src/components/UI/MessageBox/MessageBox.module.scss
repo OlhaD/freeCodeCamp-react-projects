@@ -1,0 +1,10 @@
+@import "../../../share/styles/global.module.scss";
+
+$backgroundColor: rgb(128,128,128);
+
+.MessageBox {
+    @include flex-center(center, center);
+    background-color: $backgroundColor;
+    width: 15rem;
+    height: 2.5rem;
+}
