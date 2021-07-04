@@ -7,7 +7,7 @@ function Slider(props) {
 
     return (
         <div>
-            <input type="range" min={props.min} max={props.max} value={props.value} onChange={(e) => sliderChangedHandler(e)}></input>
+            <input type="range" min={props.min} max={props.max} value={props.value} onChange={(e) => sliderChangedHandler(e)} disabled={props.disabled}></input>
         </div>
     );
 }

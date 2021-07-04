@@ -13,7 +13,7 @@ function Power(props) {
                 <h3>Power</h3>
             </header>
 
-            <Toggler onToggled={(isOn) => onPowerChanged(isOn)}/>
+            <Toggler isOn={props.isOn} onToggled={(isOn) => onPowerChanged(isOn)}/>
         </div>
     );
 }
