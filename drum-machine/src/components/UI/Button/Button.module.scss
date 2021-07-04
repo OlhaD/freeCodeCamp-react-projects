@@ -19,3 +19,17 @@ $active-background-color: rgb(241,196,15);
     background-color: $active-background-color;
     border: 0;
 }
+
+@media(max-width: 500px){
+    .Button {
+        width: 5rem;
+        height: 4rem;
+    }
+}
+
+@media(max-width: 350px){
+    .Button {
+        width: 4rem;
+        height: 3rem;
+    }
+}

@@ -21,3 +21,11 @@ $border-color: rgb(241,196,15);
       }
     }
   }
+
+  @media(max-width: 500px){
+    .Display{
+        flex-direction: column;
+        min-width: 100px;
+        margin: 1rem;
+    }
+}
