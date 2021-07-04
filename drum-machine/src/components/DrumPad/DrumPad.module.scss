@@ -1,0 +1,31 @@
+@import "../../share/styles/global.module.scss";
+
+$background-color: rgb(179,179,179);
+$border-color: rgb(241,196,15);
+
+.Display {
+    @include flex-center(left, center);
+    width: 50rem;
+    min-width: 750px;
+    background-color: $background-color;
+    border: 5px solid $border-color;
+
+    .RightPanel{
+      @include flex-center(center, center);
+      flex-direction: column;
+      width: 50%;
+      padding-right: 1rem;
+
+      div {
+        margin: 5px 0;
+      }
+    }
+  }
+
+  @media(max-width: 500px){
+    .Display{
+        flex-direction: column;
+        min-width: 100px;
+        margin: 1rem;
+    }
+}

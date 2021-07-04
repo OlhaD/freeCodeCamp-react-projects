@@ -1,0 +1,23 @@
+@import "./share/styles/global.module.scss";
+
+$primary-color: rgb(141,141,141);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  background-color: $primary-color;
+  min-height: 100vh;
+  height: 100%;
+
+  .Container{
+    @include flex-center(center, center);
+    height: 100vh;    
+
+    
+  }
+}
