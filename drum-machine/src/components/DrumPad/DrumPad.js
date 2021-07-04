@@ -5,6 +5,7 @@ import {setActiveButton} from '../../store/actions/drumPad';
 import NumPad from '../NumPad/NumPad';
 import Power from '../Power/Power';
 import MessageBox from '../UI/MessageBox/MessageBox';
+import Slider from '../UI/Slider/Slider';
 
 function DrumPad(props) {
     const buttonsInfo = [
@@ -54,8 +55,15 @@ function DrumPad(props) {
         audioSrc: "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
     }];
 
+    const sliderSettings = {
+        min: 0,
+        max: 100,
+        value: 40
+    }
+
     var [isPowerOn, setIsPowerOn] = useState(true);
     var [message, setMessage] = useState("");
+    var [volume, setVolume] = useState(sliderSettings.value);
 
     function onPowerChanged(isOn){
         setIsPowerOn(isOn);
@@ -68,9 +76,14 @@ function DrumPad(props) {
         setMessage(activeButton.message);
     }
 
+    function onVolumeChangedHandler(value){
+        setVolume(value);
+        setMessage(`Volume: ${value}`);
+    }
+
     return (
         <div className={classes.Display} >
-            <NumPad buttons={buttonsInfo} isPowerOn={isPowerOn} pressedKey={props.pressedKey} onButtonActivated={(button) => onButtonActivated(button)} />
+            <NumPad buttons={buttonsInfo} isPowerOn={isPowerOn} pressedKey={props.pressedKey} onButtonActivated={(button) => onButtonActivated(button)} volume={volume} />
 
             <div className={classes.RightPanel}>
                 <div>
@@ -79,6 +92,10 @@ function DrumPad(props) {
 
                 <div>
                     <MessageBox text={message} />
+                </div>
+
+                <div>
+                    <Slider min={sliderSettings.min} max={sliderSettings.max} onChange={(volume) => onVolumeChangedHandler(volume)} />
                 </div>
             </div>
         </div>

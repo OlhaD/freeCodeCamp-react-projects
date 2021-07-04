@@ -3,6 +3,7 @@ import * as classes from './Button.module.scss';
 
 function Button(props) {
     let audio = new Audio(props.audioSrc);
+    audio.volume = props.volume / 100;
 
     const start = () => {
         audio.play();
