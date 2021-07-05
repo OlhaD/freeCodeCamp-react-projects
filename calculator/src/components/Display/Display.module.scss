@@ -1,0 +1,28 @@
+@import "../../share/styles/global.module.scss";
+
+$primaryColor: rgb(247,247,247);
+$secondaryColor: rgb(255,165,0);
+
+@font-face {
+    font-family: 'digital';
+    src: url("../../share/fonts/digital-7/digital-7.ttf") format('truetype')// or 'opentype' depending on the file extension of your font);
+}
+
+.Display {
+    @include flex(space-evenly, flex-end, column);
+    height: 4rem;
+    margin: 0 0.5rem;
+    color: $primaryColor;
+    font-family: 'digital', sans-serif;
+    
+
+    .Formula {
+        color: $secondaryColor;
+        font-size: 1.1rem;
+    }
+
+    .Output {
+        color: $primaryColor;
+        font-size: 1.6rem;
+    }
+}

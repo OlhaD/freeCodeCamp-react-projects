@@ -1,0 +1,66 @@
+@import "../../share/styles/global.module.scss";
+
+$primaryColor: rgb(247,247,247);
+$cleanBackgroundColor: rgb(172,57,57);
+$equalsBackgroundColor: rgb(0,68,102);
+$numButtonBackgroundColor: rgb(77,77,77);
+$actionButtonBackgroundColor: rgb(102,102,102);
+$onHoverBorderColor: rgb(221,221,221);
+
+.ButtonsPanel{
+    
+    height: calc(100% - 4.5rem);
+    margin: 0 0.5rem;
+
+    font-family: "Share Tech Mono, monospace";
+    font-size: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2px;
+
+    button[buttontype="action"] {
+        background-color: $actionButtonBackgroundColor;
+    }
+
+    button[id="clean"]{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: $cleanBackgroundColor;
+    }
+
+    button[id="minus"]{
+        grid-column-start: 4;
+        grid-row-start: 2;
+    }
+
+    button[id="plus"]{
+        grid-column-start: 4;
+        grid-row-start: 3;
+    }
+
+    button[id="equal"]{
+        grid-column-start: 4;
+        grid-row-start: 4;
+        grid-row-end: 6;
+        background-color: $equalsBackgroundColor;
+    }
+
+    button[id="0"]{
+        grid-column-start: 1;
+        grid-row-start: 5;
+        grid-column-end: 3;
+    }
+
+    button {
+        @include flex(center, center);
+        background-color: $numButtonBackgroundColor;
+        cursor: pointer;
+        border: none;
+        color: $primaryColor;        
+    }
+
+    button:hover {
+        box-shadow: 0px 0px 0px 1px $onHoverBorderColor;
+    }
+}
