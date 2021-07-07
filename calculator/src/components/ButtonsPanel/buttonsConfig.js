@@ -1,0 +1,78 @@
+import { ActionButtonValue } from "../../share/enums/actionButtonValue";
+import { ButtonType } from "../../share/enums/buttonType";
+
+export const buttons = [{
+    id: "clean",
+    text: "AC",
+    type: ButtonType.ACTION,
+    actionValue: ActionButtonValue.CLEAN
+}, {
+    id: "divide",
+    text: "/",
+    type: ButtonType.ACTION,
+    actionValue: ActionButtonValue.DIVIDE
+}, {
+    id: "multiply",
+    text: "X",
+    type: ButtonType.ACTION,
+    actionValue: ActionButtonValue.MULTIPLY
+}, {
+    id: "minus",
+    text: "-",
+    type: ButtonType.ACTION,
+    actionValue: ActionButtonValue.MINUS
+}, {
+    id: "plus",
+    text: "+",
+    type: ButtonType.ACTION,
+    actionValue: ActionButtonValue.PLUS
+}, {
+    id: "equals",
+    text: "=",
+    type: ButtonType.ACTION,
+    actionValue: ActionButtonValue.EQUALS
+}, {
+    id: "0",
+    text: "0",
+    type: ButtonType.NUMBER
+}, {
+    id: "1",
+    text: "1",
+    type: ButtonType.NUMBER
+}, {
+    id: "2",
+    text: "2",
+    type: ButtonType.NUMBER
+}, {
+    id: "3",
+    text: "3",
+    type: ButtonType.NUMBER
+}, {
+    id: "4",
+    text: "4",
+    type: ButtonType.NUMBER
+}, {
+    id: "5",
+    text: "5",
+    type: ButtonType.NUMBER
+}, {
+    id: "6",
+    text: "6",
+    type: ButtonType.NUMBER
+}, {
+    id: "7",
+    text: "7",
+    type: ButtonType.NUMBER
+}, {
+    id: "8",
+    text: "8",
+    type: ButtonType.NUMBER
+}, {
+    id: "9",
+    text: "9",
+    type: ButtonType.NUMBER
+}, {
+    id: "dot",
+    text: ".",
+    type: ButtonType.NUMBER
+}]

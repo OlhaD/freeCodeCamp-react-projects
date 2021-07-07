@@ -1,0 +1,10 @@
+@import "./share/styles/global.module.scss";
+
+$backgroundColor: rgb(194,194,214);
+
+.App {
+    @include flex(center, center);
+    height: 100vh;
+    text-align: center;
+    background-color: $backgroundColor;
+}

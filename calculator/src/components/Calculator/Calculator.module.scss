@@ -1,0 +1,35 @@
+$backgroundColor: rgb(0,0,0);
+$borderColor: rgb(132,132,160);
+
+.Calculator {
+    border: 2px solid $borderColor;
+    width: 35vw;
+    max-width: 400px;
+    height: 45vh;
+    max-height: 600px;
+    background-color: $backgroundColor;
+}
+
+@media(min-width: 501px) and (max-width: 768px) {
+    .Calculator{
+        width: 70%;
+        height: 60%;
+        max-width: none;
+    }
+}
+
+@media(max-width: 500px){
+    .Calculator{
+        width: 90%;
+        height: 70%;
+        max-width: none;
+    }
+}
+
+@media(max-height: 500px){
+    .Calculator{
+        width: 80%;
+        height: 80%;
+        max-width: none;
+    }
+}
