@@ -12,10 +12,10 @@ function PomodoroPage(props) {
                 <h1>{header}</h1>
             </header>
             <div className={classes.TimerLengthSection}>
-                <TimerLength />
-                <TimerLength />
+                <TimerLength isBreak={true} name="Break" defaultLength="5" />
+                <TimerLength isBreak={false} name="Session" defaultLength="25" />
             </div>
-            <Timer />
+            <Timer isBreak={false} name="Session" duration="25" />
             <TimerControls />
         </div>
     );

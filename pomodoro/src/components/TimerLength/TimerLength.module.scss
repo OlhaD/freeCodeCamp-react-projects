@@ -1,3 +1,23 @@
+@import "../../shared/styles/global.module.scss";
+
 .TimerLength {
+    margin: 1.5rem;
+
+    h2, h3 {
+        font-weight: normal;
+    }
     
+    .ValueSection {
+        @include flex(center, center);
+
+        div, svg {
+            margin: 5px;
+        }
+
+        svg {
+            font-size: 1.75rem;
+        }
+
+        
+    }
 }

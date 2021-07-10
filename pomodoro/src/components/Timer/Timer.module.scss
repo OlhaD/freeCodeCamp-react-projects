@@ -1,3 +1,16 @@
+$borderColor: rgb(19,53,58);
+
 .Timer {
-    
+    border: 7px solid $borderColor;
+    border-radius: 20%;
+    margin-bottom: 1rem;
+    padding: 1.5rem 2rem;
+
+    h2 {
+        font-weight: normal;
+    }
+
+    .Digits {
+        font-size: 5rem;
+    }
 }

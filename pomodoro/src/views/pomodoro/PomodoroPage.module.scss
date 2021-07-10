@@ -3,8 +3,24 @@
 .Pomodoro {
     @include flex(center, center, column);
     height: 100vh;
+    
+    header h1{
+        font-size: 3rem;
+    }
 
     .TimerLengthSection {
         @include flex(center, center);
+    }
+}
+
+@media(max-width: 500px){
+    .TimerLengthSection{
+        display: inline!important;
+    }
+}
+
+@media(max-height: 500px){
+    .Pomodoro{
+        height: 100%;
     }
 }
