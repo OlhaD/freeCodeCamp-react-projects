@@ -1,4 +1,4 @@
-import { CHANGE_BREAK_LENGTH, CHANGE_SESSION_LENGTH, PLAY_TOGGLE, RESTART, COUNTDOWN, SESSION_BRAKE_TOGGLER } from '../actions/actionTypes';
+import { CHANGE_BREAK_LENGTH, CHANGE_SESSION_LENGTH, PLAY_PAUSE, RESTART, COUNTDOWN, SESSION_BRAKE_TOGGLER } from '../actions/actionTypes';
 
 const initialState = {
     defaultSessionLength: 25,
@@ -18,8 +18,8 @@ export default function createReducer(state = initialState, action) {
     case CHANGE_SESSION_LENGTH: {
         return changeSessionLengthHandler(state, action);
     }
-    case PLAY_TOGGLE: {
-        return playToggleHandler(state);
+    case PLAY_PAUSE: {
+        return playPauseClickHandler(state, action);
     }
     case RESTART: {
         return restartHandler(state);
@@ -56,10 +56,10 @@ function changeSessionLengthHandler(state, action){
     }
 }
 
-function playToggleHandler(state){
+function playPauseClickHandler(state, action){
     return {
         ...state,
-        isPlaying: !state.isPlaying
+        isPlaying: action.play
     }
 }
 

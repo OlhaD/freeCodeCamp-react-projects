@@ -1,4 +1,4 @@
-import { CHANGE_BREAK_LENGTH, CHANGE_SESSION_LENGTH, PLAY_TOGGLE, RESTART, COUNTDOWN, SESSION_BRAKE_TOGGLER } from "./actionTypes";
+import { CHANGE_BREAK_LENGTH, CHANGE_SESSION_LENGTH, PLAY_PAUSE, RESTART, COUNTDOWN, SESSION_BRAKE_TOGGLER } from "./actionTypes";
 
 export function onBreakLengthChange(length) {
     return {
@@ -14,9 +14,10 @@ export function onSessionLengthChange(length) {
       }
 }
 
-export function onPlayToggle(length) {
+export function onPlayPauseClick(play) {
     return {
-        type: PLAY_TOGGLE
+        type: PLAY_PAUSE,
+        play
       }
 }
 
