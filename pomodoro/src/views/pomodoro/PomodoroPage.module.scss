@@ -1,0 +1,10 @@
+@import "../../shared/styles/global.module.scss";
+
+.Pomodoro {
+    @include flex(center, center, column);
+    height: 100vh;
+
+    .TimerLengthSection {
+        @include flex(center, center);
+    }
+}
