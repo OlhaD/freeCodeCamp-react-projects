@@ -6,9 +6,9 @@ import { faPlay, faPause, faSync } from "@fortawesome/free-solid-svg-icons";
 function TimerControls(props) {
     return (
         <div className={classes.TimerControls}>
-             <FontAwesomeIcon icon={faPlay} />
-             <FontAwesomeIcon icon={faPause} />
-             <FontAwesomeIcon icon={faSync} />
+             <FontAwesomeIcon icon={faPlay} onClick={() => props.onPlayToggle()} />
+             <FontAwesomeIcon icon={faPause} onClick={() => props.onPlayToggle()} />
+             <FontAwesomeIcon icon={faSync} onClick={() => props.onRestart()} />
         </div>
     );
 }

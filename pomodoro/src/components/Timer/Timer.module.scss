@@ -1,4 +1,5 @@
 $borderColor: rgb(19,53,58);
+$lastMinuteColor: rgb(165,13,13);
 
 .Timer {
     border: 7px solid $borderColor;
@@ -6,11 +7,11 @@ $borderColor: rgb(19,53,58);
     margin-bottom: 1rem;
     padding: 1.5rem 2rem;
 
-    h2 {
-        font-weight: normal;
-    }
-
     .Digits {
         font-size: 5rem;
     }
+}
+
+.LastMinute {
+    color: $lastMinuteColor;
 }

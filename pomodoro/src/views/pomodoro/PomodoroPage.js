@@ -1,24 +1,50 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import * as classes from './PomodoroPage.module.scss';
 import TimerLength from '../../components/TimerLength/TimerLength';
 import Timer from '../../components/Timer/Timer';
 import TimerControls from '../../components/TimerControls/TimerControls';
+import { onBreakLengthChange, onSessionLengthChange, onPlayToggle, onRestart, onCountDown, onSessionBrakeToggle } from '../../store/redux/actions/timer';
 
 function PomodoroPage(props) {
-    const header = "25 + 5 Clock";
+    const header = "25 + 5 Clock";    
+
     return (
         <div className={classes.Pomodoro}>
             <header>
                 <h1>{header}</h1>
             </header>
             <div className={classes.TimerLengthSection}>
-                <TimerLength isBreak={true} name="Break" defaultLength="5" />
-                <TimerLength isBreak={false} name="Session" defaultLength="25" />
+                <TimerLength name="Break" length={props.breakLength} disabled={props.isPlaying} onChange={props.onBreakLengthChange} />
+                <TimerLength name="Session" length={props.sessionLength} disabled={props.isPlaying} onChange={props.onSessionLengthChange} />
             </div>
-            <Timer isBreak={false} name="Session" duration="25" />
-            <TimerControls />
+            <Timer isBreak={props.isBreak} isPlaying={props.isPlaying} name={props.isBreak ? "Break" : "Session"} duration={props.sessionLength} secondsLeft={props.secondsLeft} 
+                onCountDown={props.onCountDown} onSessionBrakeToggle={props.onSessionBrakeToggle}/>
+            <TimerControls isPlaying={props.isPlaying} sessionLength={props.defaultSessionLength} breakLength={props.defaultBreakLength} 
+                onPlayToggle={props.onPlayToggle} onRestart={props.onRestart} />
         </div>
     );
 }
 
-export default PomodoroPage;
+function mapStateToProps(state){ 
+    return { 
+        sessionLength: state.sessionLength,
+        breakLength: state.breakLength,
+        isBreak: state.isBreak,
+        isPlaying: state.isPlaying,
+        secondsLeft: state.secondsLeft
+    }
+}
+
+function mapDispatchToProps(dispatch){ 
+    return { 
+        onBreakLengthChange: (length) => dispatch(onBreakLengthChange(length)),
+        onSessionLengthChange: (length) => dispatch(onSessionLengthChange(length)),
+        onPlayToggle: () => dispatch(onPlayToggle()),
+        onRestart: () => dispatch(onRestart()),
+        onCountDown: () => dispatch(onCountDown()),
+        onSessionBrakeToggle: () => dispatch(onSessionBrakeToggle())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PomodoroPage);
