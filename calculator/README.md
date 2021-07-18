@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Calculator app is an application written in JavaScript using React.js and Redux. The app provides standard calculator functionality. 
+Public URL: https://calculator-cb1dc.web.app/
 
 ## Available Scripts
 
