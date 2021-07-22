@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import * as classes from './App.module.scss';
 import TextEditor from './components/TextEditor';
 import marked from "marked";

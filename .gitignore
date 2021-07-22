@@ -6,3 +6,5 @@ package-lock.json
 yarn-error.log
 node_modules/
 pomodoro/.firebase/hosting.YnVpbGQ.cache
+.vscode/
+random-quote-machine/.firebase/hosting.YnVpbGQ.cache

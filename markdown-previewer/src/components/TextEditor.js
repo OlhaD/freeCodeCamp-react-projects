@@ -33,7 +33,7 @@ function TextEditor(props) {
                 props.isEditor 
                     ? 
                         isExpanded 
-                            ? <textarea onChange={props.onTextAreaChanged} className={[classes.Body, classes.ExpandedView]' ')} value={props.value} />
+                            ? <textarea onChange={props.onTextAreaChanged} className={[classes.Body, classes.ExpandedView].join(' ')} value={props.value} />
                             : <textarea onChange={props.onTextAreaChanged} className={[classes.Body].join(' ')} value={props.value} />                 
                     : 
                         isExpanded 
