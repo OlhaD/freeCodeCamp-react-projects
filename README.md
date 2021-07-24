@@ -16,10 +16,10 @@ Projects:
   Requirements: https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-markdown-previewer. \
   Live URL: https://markdownpreviewer-34d9a.web.app/ 
  
-4) "25 + 5 Clock"
+4) "25 + 5 Clock"\
   Requirements: https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-25--5-clock. \
   Live URL: https://pomodoro-7ef14.web.app/ 
   
-5) "Random Quote Machine"
+5) "Random Quote Machine"\
   Requirements: https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine. \
   Live URL: https://randomquotemachine-4a146.web.app/
