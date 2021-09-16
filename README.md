@@ -1,5 +1,5 @@
 # freeCodeCamp certification demo projects (buit with React.js)
-The repository contains 5 demo projects created in scope of certification "Front End Development Libraries Certification" by FreeCodeCamp. \
+The repository contains 5 demo projects created in scope of certification "Front End Development Libraries Certification" by FreeCodeCamp.\
 Technologies used: React.js, Redux, HTML5, SASS.\
 Certification URL: https://www.freecodecamp.org/certification/fcc3ca80a59-c328-43d7-a3ea-839a94a67fa7/front-end-libraries
 
